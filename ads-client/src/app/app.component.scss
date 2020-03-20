@@ -1,0 +1,28 @@
+.header {
+  height: 60px;
+  background-color: #383c4a;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+
+  a {
+    align-self: center;
+
+    .material-icons {
+      font-size: 48px;
+      margin: auto;
+      color: #dfe8f9;
+    }
+  }
+}
+
+.content {
+  margin: 0 15px;
+}
+
+@media (min-width: 1300px) {
+  .content {
+    margin: auto;
+    width: 1300px;
+  }
+}

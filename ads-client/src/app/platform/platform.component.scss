@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card {
+    margin-bottom: 15px;
+    box-shadow: none !important;
+  }
+
+  mat-card-title {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #3c3c3cba;
+  }
+
+  mat-card-content {
+    color: #000000c7;
+  }
+
+  .header {
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000c7;
+  }
+
+  .budget-cell {
+    display: flex;
+  }
+
+  .progress-bar {
+    margin: auto;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  img {
+    width: 100%;
+    max-height: 440px;
+    margin: 10px auto 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  table {
+    width: 100%;
+
+    th {
+      width: 25%;
+      text-align: left;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ececec;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+    max-height: 680px;
+
+    .section {
+      flex-basis: 49%;
+
+      .creatives {
+        width: 60%;
+
+        .card {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

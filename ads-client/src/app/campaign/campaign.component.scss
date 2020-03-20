@@ -1,0 +1,28 @@
+.title {
+  color: #383c4a;
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.tabs {
+  background-color: #fff;
+}
+
+::ng-deep .mat-tab-header {
+  background-color: #425084f7;
+}
+
+::ng-deep .mat-tab-label-active {
+  color: #fff !important;
+}
+
+::ng-deep .mat-tab-label-content {
+  font-size: 1.2rem;
+}
+
+::ng-deep .mat-ink-bar {
+  background-color: #fff;
+}

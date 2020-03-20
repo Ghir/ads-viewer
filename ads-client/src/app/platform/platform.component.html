@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="section">
+    <mat-card class="card">
+      <mat-card-title>Status</mat-card-title>
+
+      <mat-card-content>
+        <table mat-table>
+          <tr mat-row>
+            <th>Status</th>
+            <td>{{ platform.status }}</td>
+          </tr>
+          <tr mat-row>
+            <th>Start Date</th>
+            <td>{{ platform.start_date | date }}</td>
+          </tr>
+          <tr mat-row>
+            <th>End Date</th>
+            <td>{{ platform.end_date | date  }}</td>
+          </tr>
+          <tr mat-row>
+            <th>Budget</th>
+            <td class="budget-cell">
+              <span>{{ budget }}%</span>
+              <mat-progress-bar class="progress-bar"
+                                mode="determinate"
+                                [value]="100 -platform.remaining_budget/platform.total_budget*100"></mat-progress-bar>
+            </td>
+          </tr>
+        </table>
+      </mat-card-content>
+
+    </mat-card>
+
+    <mat-card class="card">
+      <mat-card-title>Audience</mat-card-title>
+
+      <mat-card-content>
+        <table mat-table>
+          <tr mat-row
+              *ngFor="let field of audienceFields">
+            <th>{{ field | format | titlecase}}</th>
+            <td>{{ platform.target_audience[field] | spaced }}</td>
+          </tr>
+        </table>
+      </mat-card-content>
+
+    </mat-card>
+
+    <mat-card class="card">
+      <mat-card-title>Insights</mat-card-title>
+
+      <mat-card-content>
+        <table mat-table>
+          <tr mat-row
+              *ngFor="let field of insightsFields">
+            <th>{{ field | format | titlecase }}</th>
+            <td>{{ platform.insights[field]}}</td>
+          </tr>
+        </table>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+  <div class="section creatives">
+    <mat-card class="card">
+      <mat-card-title>Creatives</mat-card-title>
+
+      <mat-card-content>
+
+        <p class="header">{{ platform.creatives.header }}</p>
+        <p class="description">{{ platform.creatives.description }}</p>
+
+      </mat-card-content>
+
+      <img mat-card-image
+           [src]="api + '/campaigns/img/' + platform.creatives.image">
+      <a [href]="platform.creatives.url">{{ platform.creatives.url }}</a>
+    </mat-card>
+  </div>
+</div>

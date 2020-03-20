@@ -1,0 +1,11 @@
+<div class="title">
+  <span>{{ campaignName | async }}</span>
+</div>
+
+<mat-tab-group mat-stretch-tabs>
+  <mat-tab [label]="name | titlecase"
+           *ngFor="let name of platformNames | async"
+           class="tabs">
+    <app-platform [platform]="platforms[name]"></app-platform>
+  </mat-tab>
+</mat-tab-group>

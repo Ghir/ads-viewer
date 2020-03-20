@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="title">
+    <span>CAMPAIGNS</span>
+  </div>
+
+  <div class="cards-container"
+       *ngIf="campaigns?.length; else message">
+    <mat-card (click)="navigate(campaign.id, campaign.name)"
+              *ngFor="let campaign of campaigns"
+              class="card">
+      <mat-card-title class="card-title">{{ campaign.name }}</mat-card-title>
+
+      <table mat-table>
+        <tr mat-row>
+          <th>Status</th>
+          <td>{{ campaign.status }}</td>
+        </tr>
+        <tr mat-row>
+          <th>Goal</th>
+          <td>{{ campaign.goal }}</td>
+        </tr>
+        <tr mat-row>
+          <th>Budget</th>
+          <td class="budget-cell">
+            <span>{{ campaign.budget }}%</span>
+            <mat-progress-bar class="progress-bar"
+                              mode="determinate"
+                              [value]="campaign.budget"></mat-progress-bar>
+          </td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>
+
+  <ng-template #message>
+    <span class="message">No campaigns planned...</span>
+  </ng-template>
+</div>

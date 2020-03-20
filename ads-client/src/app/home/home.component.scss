@@ -1,0 +1,95 @@
+.title {
+  color: #383c4a;
+  font-weight: bold;
+  font-size: 2.1rem;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.message {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #383c4a;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  .card {
+    margin-bottom: 20px;
+    cursor: pointer;
+    height: 140px;
+    width: 415px;
+
+    &:hover {
+      background-color: #d8d8d8;
+    }
+
+    .progress-bar {
+      margin: auto;
+      margin-left: 10px;
+      display: inline-block;
+      width: 75%;
+    }
+
+    .card-title {
+      margin-bottom: 15px;
+      color: #565363;
+    }
+
+    table {
+      width: 100%;
+      font-size: 0.9rem;
+
+      tr {
+        height: 32px;
+      }
+
+      th {
+        width: 25%;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .message {
+    font-size: 1.5rem;
+  }
+
+  .cards-container {
+    width: 1030px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+
+    .card {
+      height: 185px;
+      width: 470px;
+      margin-bottom: 25px;
+
+      .card-title {
+        margin-bottom: 23px;
+        font-size: 1.7rem;
+      }
+
+      table {
+        font-size: 1.1rem;
+      }
+
+      tr {
+        height: 42px;
+      }
+    }
+  }
+}
