@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Platform } from './../interfaces/interfaces';
-import { API } from '../services/api.service';
+import { Platform } from '../../interfaces/interfaces';
+import { API } from '../../services/api.service';
 
 @Component({
   selector: 'app-platform',

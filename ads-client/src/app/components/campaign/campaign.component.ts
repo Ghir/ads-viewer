@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { ApiService } from '../services/api.service';
-import { Platforms } from './../interfaces/interfaces';
+import { ApiService } from '../../services/api.service';
+import { Platforms } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-campaign',

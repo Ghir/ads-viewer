@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { take, tap } from 'rxjs/operators';
-import { CampaignInfo } from '../interfaces/interfaces';
-import { ApiService } from '../services/api.service';
+import { CampaignInfo } from '../../interfaces/interfaces';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-home',

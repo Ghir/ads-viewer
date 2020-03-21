@@ -3,8 +3,8 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { campaignsMock } from 'src/mocks/campaigns';
-import ApiMockService from '../services/api-mock.service';
-import { ApiService } from '../services/api.service';
+import ApiMockService from '../../services/api-mock.service';
+import { ApiService } from '../../services/api.service';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -32,7 +32,7 @@ describe('HomeComponent', () => {
   });
 
   it('should show the correct number of campaigns', () => {
-    component.campaigns = of(campaignsMock);
+    component.campaigns = campaignsMock;
     const campaigns = fixture.debugElement.queryAll(By.css('.card'));
 
     expect(campaigns.length).toBeTruthy();

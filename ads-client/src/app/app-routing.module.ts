@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CampaignComponent } from './campaign/campaign.component';
-import { HomeComponent } from './home/home.component';
+import { CampaignComponent } from './components/campaign/campaign.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
