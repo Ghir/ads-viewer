@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
-import { CampaignsService } from './campaigns.service';
-import { Platforms, CampaignInfo } from './interfaces/interfaces';
 import { Response } from 'express';
+import { CampaignsService } from './campaigns.service';
+import { CampaignInfo, Platforms } from './interfaces/interfaces';
 
 @Controller('campaigns')
 export class CampaignsController {
@@ -18,7 +18,7 @@ export class CampaignsController {
   }
 
   @Get('img/:uri')
-  getImage(@Param('uri') uri: string, @Res() res: Response) {
+  getImage(@Param('uri') uri: string, @Res() res: Response): void {
     return res.sendFile(uri, { root: 'public' });
   }
 }
