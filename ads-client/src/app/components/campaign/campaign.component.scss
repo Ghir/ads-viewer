@@ -13,10 +13,11 @@
 
 ::ng-deep .mat-tab-header {
   background-color: #425084f7;
+  border-radius: 4px;
 }
 
 ::ng-deep .mat-tab-label-active {
-  color: #fff !important;
+  color: #fff;
 }
 
 ::ng-deep .mat-tab-label-content {
@@ -24,5 +25,5 @@
 }
 
 ::ng-deep .mat-ink-bar {
-  background-color: #fff;
+  background-color: #fff !important;
 }

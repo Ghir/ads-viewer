@@ -138,7 +138,7 @@ const data = [
             'United Kingdom',
             'Poland'
           ],
-          KeyWords: [
+          keywords: [
             'Easy DevOps',
             'DevOps As A Service',
             'DevOps',

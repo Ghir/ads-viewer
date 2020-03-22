@@ -2,10 +2,13 @@
   <span>{{ campaignName | async }}</span>
 </div>
 
-<mat-tab-group mat-stretch-tabs>
-  <mat-tab [label]="name | titlecase"
-           *ngFor="let name of platformNames | async"
+<mat-tab-group class="group"
+               mat-stretch-tabs>
+  <mat-tab *ngFor="let platform of platforms | async | keyvalue"
+           [label]="platform.key | titlecase"
            class="tabs">
-    <app-platform [platform]="platforms[name]"></app-platform>
+
+    <app-platform [platform]="platform.value"></app-platform>
+
   </mat-tab>
 </mat-tab-group>

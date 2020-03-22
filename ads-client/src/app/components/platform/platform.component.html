@@ -1,5 +1,5 @@
-<mat-card-title class="container">
-  <mat-card-title class="section">
+<div class="container">
+  <div class="section">
     <mat-card class="card">
       <mat-card-title>Status</mat-card-title>
 
@@ -37,9 +37,9 @@
       <mat-card-content>
         <table mat-table>
           <tr mat-row
-              *ngFor="let field of audienceFields">
-            <th>{{ field | format | titlecase}}</th>
-            <td>{{ platform.target_audience[field] | spaced }}</td>
+              *ngFor="let field of platform?.target_audience | keyvalue">
+            <th>{{ field.key | format | titlecase}}</th>
+            <td>{{ field.value | spaced }}</td>
           </tr>
         </table>
       </mat-card-content>
@@ -52,15 +52,15 @@
       <mat-card-content>
         <table mat-table>
           <tr mat-row
-              *ngFor="let field of insightsFields">
-            <th>{{ field | format | titlecase }}</th>
-            <td>{{ platform.insights[field]}}</td>
+              *ngFor="let field of platform?.insights | keyvalue">
+            <th>{{ field.key | format | titlecase }}</th>
+            <td>{{ field.value}}</td>
           </tr>
         </table>
       </mat-card-content>
 
     </mat-card>
-  </mat-card-title>
+  </div>
 
   <div class="section creatives">
     <mat-card class="card">
@@ -68,7 +68,9 @@
 
       <mat-card-content>
 
-        <p class="header">{{ platform.creatives.header }}</p>
+        <p class="header">{{ platform.creatives.header || platform.creatives.header_1 }}</p>
+        <p class="header"
+           *ngIf="platform.creatives.header_2">{{ platform.creatives.header_2 }}</p>
         <p class="description">{{ platform.creatives.description }}</p>
 
       </mat-card-content>
@@ -78,4 +80,4 @@
       <a [href]="platform.creatives.url">{{ platform.creatives.url }}</a>
     </mat-card>
   </div>
-</mat-card-title>
+</div>
